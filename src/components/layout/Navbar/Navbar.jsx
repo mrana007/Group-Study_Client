@@ -1,12 +1,8 @@
-
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider/AuthProvider";
 import { useContext } from "react";
 
-
-
 const Navbar = () => {
-
     const {user, logOut} = useContext(AuthContext);
 
     const handleLogOut = () =>{
@@ -47,7 +43,7 @@ const Navbar = () => {
             <>
             <span className="pr-4"><img className="rounded-full w-11 h-11" src={user.photoURL} alt="" /></span>
             <span className="pr-4">{user.displayName}</span>
-            <button onClick={handleLogOut} className="btn btn-secondary md:w-36 text-lg normal-case text-white">Log Out</button>
+            <button onClick={handleLogOut} className="btn btn-accent bg-green-700 md:w-36 text-lg normal-case text-white">Log Out</button>
             </>
             :
             <Link to='/login'>
