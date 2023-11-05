@@ -17,11 +17,11 @@ const AssignmentCard = ({ assignment }) => {
         Marks: <span className="text-xl font-semibold">{marks}</span>
         </p>
         <div className="card-actions justify-between">
-          <Link to={`/update/${_id}`}>
-            <button className="btn bg-green-600 text-white">Update</button>
+          <Link to={`/updateAssignment/${_id}`}>
+            <button className="btn bg-green-600 text-white normal-case">Update Assignment</button>
           </Link>
           <Link to={`/product/${_id}`}>
-            <button className="btn bg-blue-400 text-white">Details</button>
+            <button className="btn bg-blue-400 text-white normal-case">View Assignment</button>
           </Link>
         </div>
       </div>

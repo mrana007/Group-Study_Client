@@ -5,6 +5,7 @@ import Home from "../page/Home/Home";
 import Login from "../page/LogIn/LogIn";
 import SignUp from "../page/SignUp/SignUp";
 import AddAssignment from "../components/layout/AddAssignment/AddAssignment";
+import UpdateAssignment from "../components/layout/UpdateAssignment/UpdateAssignment";
 
 const routes = createBrowserRouter([
     {
@@ -30,8 +31,9 @@ const routes = createBrowserRouter([
             element: <AddAssignment />
         },
         {
-            path: 'updateAssignment',
-            element: <SignUp />
+            path: 'updateAssignment/:id',
+            element: <UpdateAssignment />,
+            loader: ({params}) => fetch(`http://localhost:5000/assignment/${params.id}`)
         },
       ]
     },
