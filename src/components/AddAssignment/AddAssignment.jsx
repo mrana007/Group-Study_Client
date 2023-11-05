@@ -1,7 +1,8 @@
-// import swal from "sweetalert";
+import swal from "sweetalert";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+
 
 
 const AddAssignment = () => {
@@ -21,7 +22,21 @@ const AddAssignment = () => {
         const newAssignment ={name, marks, image, category, user, date, description}
         console.log(newAssignment);
 
-
+        // send data to the server
+        fetch('http://localhost:5000/assignments', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newAssignment)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data);
+            if(data.insertedId){
+                swal("", "Assignment added successfully", "success");
+            }
+        })
     }
 
   return (
