@@ -17,6 +17,7 @@ const Navbar = () => {
 
     const navLinks =<>
         <li><NavLink to='/'>Home</NavLink></li>
+        <li><NavLink to='/addAssignment'>Add Assignment</NavLink></li>
         
     </>
     return (
@@ -30,7 +31,10 @@ const Navbar = () => {
         {navLinks}
       </ul>
     </div>
+    <div className="flex items-center">
+    <img className="w-28" src="https://i.ibb.co/FwcVqwD/group.png" alt="" />
     <a className="btn btn-ghost normal-case text-xl font-extrabold text-green-700">Study Hive</a>
+    </div>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">

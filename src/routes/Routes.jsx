@@ -4,6 +4,7 @@ import ErrorPage from "../page/ErrorPage/ErrorPage";
 import Home from "../page/Home/Home";
 import Login from "../page/LogIn/LogIn";
 import SignUp from "../page/SignUp/SignUp";
+import AddAssignment from "../components/AddAssignment/AddAssignment";
 
 const routes = createBrowserRouter([
     {
@@ -21,6 +22,14 @@ const routes = createBrowserRouter([
         },
         {
             path: 'signUp',
+            element: <SignUp />
+        },
+        {
+            path: 'addAssignment',
+            element: <AddAssignment />
+        },
+        {
+            path: 'updateAssignment',
             element: <SignUp />
         },
       ]

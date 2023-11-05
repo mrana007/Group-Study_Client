@@ -3,13 +3,13 @@ const Banner = () => {
     <div>
       <div
         className="hero min-h-screen"
-        style={{ backgroundImage: "url(https://i.ibb.co/v1HYpVV/wave-haikei.png)" }}
+        style={{ backgroundImage: "url(https://i.ibb.co/k5fgtjW/3423-1.jpg)" }}
       >
-        <div className="hero-overlay"></div>
+        <div className="hero-overlay bg-opacity-90"></div>
         <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
           <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
             <img
-              src="https://i.ibb.co/7pXhJFB/banner.jpg"
+              src="https://i.ibb.co/CPFHSW6/6183939-3074320.jpg"
               alt=""
               className="object-contain rounded-lg h-60 sm:h-80 lg:h-96 xl:h-112 2xl:h-128"
             />
