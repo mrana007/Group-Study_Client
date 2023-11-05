@@ -44,7 +44,7 @@ const Login = () => {
 
     return (
       <Container>
-        <div className="flex flex-col md:flex-row justify-evenly mx-auto items-center">
+        <div className="flex flex-col md:flex-row-reverse justify-evenly mx-auto items-center">
             <div>
               <img className="w-[60vh]" src="https://i.ibb.co/HtcJD7X/sign.jpg" alt="" />
             </div>

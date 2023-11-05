@@ -54,9 +54,9 @@ const SignUp = () => {
 
     return (
         <Container>
-        <div className="flex flex-col md:flex-row-reverse justify-evenly mx-auto items-center">
+        <div className="flex flex-col md:flex-row justify-evenly mx-auto items-center">
             <div>
-              <img className="w-[60vh]" src="https://i.ibb.co/HtcJD7X/sign.jpg" alt="" />
+              <img className="w-[60vh]" src="https://i.ibb.co/w694wRf/Sign-up-rafiki-2.png" alt="" />
             </div>
             <div className="card shadow-2xl bg-green-200 mb-8">
                 <h2 className="text-3xl my-6 text-center font-bold px-8">Register your account</h2>
