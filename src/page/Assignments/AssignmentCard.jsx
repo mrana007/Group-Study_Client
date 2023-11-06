@@ -20,7 +20,7 @@ const AssignmentCard = ({ assignment }) => {
           <Link to={`/updateAssignment/${_id}`}>
             <button className="btn bg-green-600 text-white normal-case">Update Assignment</button>
           </Link>
-          <Link to={`/product/${_id}`}>
+          <Link to={`/assignmentDetails/${_id}`}>
             <button className="btn bg-blue-400 text-white normal-case">View Assignment</button>
           </Link>
         </div>

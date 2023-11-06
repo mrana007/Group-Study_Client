@@ -14,7 +14,7 @@ const Features = () => {
 				</svg>
 				<div className="ml-3">
 					<h2 className="text-base font-bold">Collaboration & Engagement</h2>
-					<p className="mt-2 dark:text-gray-400">Discover collaborative learning at its best. Connect with peers, share insights, and actively engage in discussions, enhancing comprehension and motivation.</p>
+					<p className="mt-2 dark:text-gray-400 italic">Discover collaborative learning at its best. Connect with peers, share insights, and actively engage in discussions, enhancing comprehension and motivation.</p>
 				</div>
 			</div>
 			<div className="flex">
@@ -23,7 +23,7 @@ const Features = () => {
 				</svg>
 				<div className="ml-3">
 					<h2 className="text-base font-bold">Diverse Perspectives</h2>
-					<p className="mt-2 dark:text-gray-400">Explore a world of diverse ideas and viewpoints. Learn from students with unique insights, broadening your understanding and problem-solving skills.</p>
+					<p className="mt-2 dark:text-gray-400 italic">Explore a world of diverse ideas and viewpoints. Learn from students with unique insights, broadening your understanding and problem-solving skills.</p>
 				</div>
 			</div>
 			<div className="flex">
@@ -32,7 +32,7 @@ const Features = () => {
 				</svg>
 				<div className="ml-3">
 					<h2 className="text-base font-bold">Active Learning</h2>
-					<p className="mt-2 dark:text-gray-400">Engage in lively discussions, debates, and hands-on activities. Our Active Learning feature ensures a participatory and motivating study experience.</p>
+					<p className="mt-2 dark:text-gray-400 italic">Engage in lively discussions, debates, and hands-on activities. Our Active Learning feature ensures a participatory and motivating study experience.</p>
 				</div>
 			</div>
 			<div className="flex">
@@ -41,7 +41,7 @@ const Features = () => {
 				</svg>
 				<div className="ml-3">
 					<h2 className="text-base font-bold">Accountability & Progress</h2>
-					<p className="mt-2 dark:text-gray-400">Stay on track with our Accountability & Progress feature. Set and monitor your groups goals, ensuring that you meet your study objectives effectively.</p>
+					<p className="mt-2 dark:text-gray-400 italic">Stay on track with our Accountability & Progress feature. Set and monitor your groups goals, ensuring that you meet your study objectives effectively.</p>
 				</div>
 			</div>
 			<div className="flex">
@@ -59,7 +59,7 @@ const Features = () => {
 				</svg>
 				<div className="ml-3">
 					<h2 className="text-base font-bold">Efficient Time Management</h2>
-					<p className="mt-2 dark:text-gray-400">Optimize your study schedule for productive group sessions. Efficient Time Management ensures you make the most of your valuable study hours.</p>
+					<p className="mt-2 dark:text-gray-400 italic">Optimize your study schedule for productive group sessions. Efficient Time Management ensures you make the most of your valuable study hours.</p>
 				</div>
 			</div>
 			<div className="flex">
@@ -68,7 +68,7 @@ const Features = () => {
 				</svg>
 				<div className="ml-3">
 					<h2 className="text-base font-bold">Personalized Study Plans</h2>
-					<p className="mt-2 dark:text-gray-400">Tailor your study plans to your unique academic needs. Set goals, track your progress, and stay organized for effective group study sessions.</p>
+					<p className="mt-2 dark:text-gray-400 italic">Tailor your study plans to your unique academic needs. Set goals, track your progress, and stay organized for effective group study sessions.</p>
 				</div>
 			</div>
 			<div className="flex">
@@ -77,7 +77,7 @@ const Features = () => {
 				</svg>
 				<div className="ml-3">
 					<h2 className="text-base font-bold">Resource Sharing</h2>
-					<p className="mt-2 dark:text-gray-400">Share and access study materials, notes, and resources within your study group. Collaborate efficiently on a centralized platform, simplifying your learning experience</p>
+					<p className="mt-2 dark:text-gray-400 italic">Share and access study materials, notes, and resources within your study group. Collaborate efficiently on a centralized platform.</p>
 				</div>
 			</div>
 		</dl>

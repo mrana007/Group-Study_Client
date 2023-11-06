@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import AssignmentCard from "../../components/layout/AssignmentCard/AssignmentCard";
+import AssignmentCard from "./AssignmentCard";
 
 
 const Assignments = () => {
