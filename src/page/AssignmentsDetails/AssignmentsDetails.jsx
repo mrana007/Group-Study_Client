@@ -33,9 +33,6 @@ const AssignmentsDetails = () => {
               </p>
             </div>
             <TakeAssignmentModal></TakeAssignmentModal>
-              {/* <button className="btn btn-block bg-green-500 text-white normal-case">
-                Take Assignment
-              </button> */}
           </div>
         </div>
       </div>

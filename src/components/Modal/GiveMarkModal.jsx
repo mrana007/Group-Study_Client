@@ -1,39 +1,39 @@
 
 import swal from "sweetalert";
 import { useRef } from "react";
-import { useLoaderData } from "react-router-dom";
+// import { useLoaderData } from "react-router-dom";
 
-const TakeAssignmentModal = () => {
+const GiveMarkModal = () => {
   const dialogRef = useRef();
-    const services = useLoaderData();
-    const {title, marks, creator} = services;
+    // const services = useLoaderData();
+    // const { giveMarks, feedback} = services;
 
-  const handleSubmitAssignment = (event) => {
+  const handleGiveMark = (event) => {
     event.preventDefault();
 
     const form = event.target;
-    const examineeName = form.examineeName.value;
-    const title = form.title.value;
-    const marks = form.marks.value;
-    const creator = form.creator.value;
+    const pdfLink = form.pdfLink.value;
+    const note = form.note.value;
+    const giveMarks = form.giveMarks.value;
+    const feedback = form.feedback.value;
 
     const status ="pending"
 
-    const newSubmittedAssignments = {status, examineeName, title, marks, creator};
-
+    const newGiveMarks = {status, pdfLink, note, giveMarks, feedback};
+    
     // send data to the server
-    fetch("http://localhost:5000/submittedAssignments", {
+    fetch("http://localhost:5000/giveMarks", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(newSubmittedAssignments),
+      body: JSON.stringify(newGiveMarks),
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         if (data.insertedId) {
-          swal("", "Assignment Submit Successfully", "success");
+          swal("", "Marks Given Successfully", "success");
           dialogRef.current.close(); // Close the modal
         }
       });
@@ -43,79 +43,78 @@ const TakeAssignmentModal = () => {
     <div>
       {/* Open the modal using document.getElementById('ID').showModal() method */}
       <button
-        className="btn btn-block bg-green-500 text-white normal-case"
+        className="btn bg-orange-500 text-white  normal-case"
         onClick={() => dialogRef.current.showModal()}
       >
-        Take Assignment
+        Give Marks
       </button>
       <dialog
         ref={dialogRef} // Add a ref to the dialog element
         className="modal modal-bottom sm:modal-middle"
       >
         <div className="modal-box">
-          <form onSubmit={handleSubmitAssignment}>
+          <form onSubmit={handleGiveMark}>
             <div className="mb-8 w-full mx-auto">
                 {/* examinee */}
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Examinee Name</span>
+                  <span className="label-text">PDF Link</span>
                 </label>
                 <label className="input-group">
                   <input
                     type="text"
-                    name="examineeName"
-                    required
-                    placeholder="Input your examineeName file"
+                    name="pdfLink"
+                    placeholder=""
                     className="input input-bordered w-full  py-2"
                   />
                 </label>
               </div>
-                    {/* title */}
+              {/* Quick Note */}
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Assignment Title</span>
+                  <span className="label-text">Give a quick Note</span>
                 </label>
                 <label className="input-group">
-                  <input
-                    className="textarea textarea-bordered w-full"
-                    name="title" defaultValue={title} placeholder="Enter a quick title"
+                <textarea className="textarea textarea-bordered w-full"
+                type="text"
+                name="note" 
+                placeholder="Quick Note">
+                </textarea>
+                </label>
+              </div>
+                    {/* Give Marks */}
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Give Mark</span>
+                </label>
+                <label className="input-group">
+                <input
+                    type="number"
+                    name="giveMarks"
+                    placeholder="Please give marks"
+                    className="input input-bordered w-full  py-2"
                   />
                 </label>
               </div>
-                {/* marks */}
+                {/* feedback */}
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Marks</span>
+                  <span className="label-text">Feed Back</span>
                 </label>
                 <label className="input-group">
                   <input
                     type="text"
-                    name="marks"
-                    defaultValue={marks}
-                    placeholder="Assignment marks"
+                    name="feedback"
+                    placeholder="Give feedback"
                     className="input input-bordered w-full  py-2"
                   />
                 </label>
               </div>
                 {/* assignment creator */}
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Assignment creator email</span>
-                </label>
-                <label className="input-group">
-                  <input
-                    type="text"
-                    name="creator"
-                    defaultValue={creator}
-                    placeholder="Assignment creator email"
-                    className="input input-bordered w-full  py-2"
-                  />
-                </label>
-              </div>
             </div>
             <input
               type="submit"
-              value="Submit"
+              value="Giving Mark"
               className="btn btn-block bg-green-500 text-white normal-case"
             />
           </form>
@@ -125,4 +124,4 @@ const TakeAssignmentModal = () => {
   );
 };
 
-export default TakeAssignmentModal;
+export default GiveMarkModal;

@@ -2,12 +2,15 @@ import { Link } from "react-router-dom";
 
 const AssignmentCard = ({ assignment }) => {
   const { _id, title, category, image, marks } = assignment;
-
+  
   return (
     <div className="card card-compact bg-base-100 rounded-none border">
+      <div className="relative">
       <figure>
         <img className="w-full h-48 p-1" src={image} alt='groupStudy' />
-      </figure>
+      </figure>     
+        <button className="absolute top-0 right-1 text-red-500 text-3xl font-bold">X</button>
+      </div>
       <div className="card-body">
         <h2 className="card-title">
           {title}

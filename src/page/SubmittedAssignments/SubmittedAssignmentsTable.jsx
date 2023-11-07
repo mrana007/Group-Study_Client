@@ -1,3 +1,4 @@
+import GiveMarkModal from "../../components/Modal/GiveMarkModal";
 
 const submittedAssignmentsTable = ({submittedAssignment}) => {
     const { examineeName, title, marks, status } = submittedAssignment;
@@ -11,13 +12,13 @@ const submittedAssignmentsTable = ({submittedAssignment}) => {
         <td>{marks}</td>
         <th>
           {
-              status === 'confirm' ? <span className="font-bold text-primary">Confirmed</span> :
-              <button className="btn bg-orange-600 normal-case font-bold items-center text-white">Pending</button>
+              status === 'pending' ? <span className="font-bold text-primary">Pending</span> :
+              <button className="btn bg-orange-600 normal-case font-bold items-center text-white">Confirm</button>
           }
         </th>
         <th>
             {
-                <button className="btn bg-orange-500 text-white  normal-case">Give Mark</button>
+                <GiveMarkModal />
             }
         </th>
       </tr>
