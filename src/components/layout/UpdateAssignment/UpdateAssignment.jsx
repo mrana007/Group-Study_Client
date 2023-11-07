@@ -9,7 +9,7 @@ const UpdateAssignment = () => {
     const [startDate, setStartDate] = useState(new Date());
 
     const assignment = useLoaderData();
-    const {_id, title, marks, image, category, user, date, description} = assignment;
+    const {_id, title, marks, image, category, creator, date, description} = assignment;
 
     const handleUpdateAssignment = event =>{
         event.preventDefault();
@@ -18,11 +18,11 @@ const UpdateAssignment = () => {
         const marks = form.marks.value;
         const image = form.image.value;
         const category = form.category.value;
-        const user = form.user.value;
+        const creator = form.creator.value;
         const description = form.description.value;
         const date = form.date.value;
 
-        const updatedAssignment ={title, marks, image, category, user, date, description}
+        const updatedAssignment ={title, marks, image, category, creator, date, description}
         console.log(updatedAssignment);
 
                 // send data to the server
@@ -92,10 +92,10 @@ const UpdateAssignment = () => {
         <div className="md:flex">
           <div className="form-control md:w-1/2">
             <label className="label">
-              <span className="label-text">User</span>
+              <span className="label-text">Assignment Creator</span>
             </label>
             <label className="input-group">
-              <input type="email" name="user" defaultValue={user} placeholder="Enter user email"
+              <input type="email" name="creator" defaultValue={creator} placeholder="Enter assignment creator email"
                 className="input input-bordered w-full" />
             </label>
           </div>

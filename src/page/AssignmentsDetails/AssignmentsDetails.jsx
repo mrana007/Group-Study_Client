@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import TakeAssignmentModal from "../../components/Modal/TakeAssignmentModal";
 
 const AssignmentsDetails = () => {
 
@@ -31,9 +32,10 @@ const AssignmentsDetails = () => {
                 Submission Date: <span className="text-lg font-semibold">{date}</span>
               </p>
             </div>
-              <button className="btn btn-block bg-green-500 text-white normal-case">
+            <TakeAssignmentModal></TakeAssignmentModal>
+              {/* <button className="btn btn-block bg-green-500 text-white normal-case">
                 Take Assignment
-              </button>
+              </button> */}
           </div>
         </div>
       </div>

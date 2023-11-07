@@ -13,11 +13,11 @@ const AddAssignment = () => {
         const marks = form.marks.value;
         const image = form.image.value;
         const category = form.category.value;
-        const user = form.user.value;
+        const creator = form.creator.value;
         const description = form.description.value;
         const date = form.date.value;
         
-        const newAssignment ={title, marks, image, category, user, date, description}
+        const newAssignment ={title, marks, image, category, creator, date, description}
         console.log(newAssignment);
 
         // send data to the server
@@ -39,7 +39,7 @@ const AddAssignment = () => {
 
   return (
     <div className="bg-green-50 p-24">
-      <h2 className="text-3xl text-center font-extrabold mb-6">Add an Assignment</h2>
+      <h2 className="text-3xl text-center font-extrabold mb-6">Create an Assignment</h2>
       <form onSubmit={handleAddAssignment} className="space-y-8">
         {/* Assignment title and marks row */}
         <div className="md:flex">
@@ -78,8 +78,16 @@ const AddAssignment = () => {
               <span className="label-text">Category</span>
             </label>
             <label className="input-group">
-              <input type="text" name="category" required placeholder="Enter category"
-                className="input input-bordered w-full" />
+            <select id="category" name="category"  className="input input-bordered w-full">
+                            <option value="">Select a level</option>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                            
+                            
+                        </select>
+              {/* <input type="text" name="category" required placeholder="Enter category"
+                className="input input-bordered w-full" /> */}
             </label>
           </div>
         </div>
@@ -87,10 +95,10 @@ const AddAssignment = () => {
         <div className="md:flex">
           <div className="form-control md:w-1/2">
             <label className="label">
-              <span className="label-text">User</span>
+              <span className="label-text">Assignment Creator</span>
             </label>
             <label className="input-group">
-              <input type="email" name="user" required placeholder="Enter user email"
+              <input type="email" name="creator" required placeholder="Enter assignment creator email"
                 className="input input-bordered w-full" />
             </label>
           </div>
@@ -104,19 +112,19 @@ const AddAssignment = () => {
             </label>
           </div>
         </div>
-        {/* assignment date row */}
+        {/* assignment due date row */}
         <div className="">
-          <div className="form-control w-full">
+          <div className="form-control md:w-1/4">
             <label className="label">
               <span className="label-text">Due Date</span>
             </label>
-            <label className="input-group">
+            <label className="input-group w-fit">
             <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} name="date" required placeholder="date"
                 className="input input-bordered w-full" />
             </label>
           </div>
         </div>
-        <input type="submit" value="Add an Assignment" className="btn btn-block text-white bg-green-700 normal-case" />
+        <input type="submit" value="Create an Assignment" className="btn btn-block text-white bg-green-700 normal-case" />
       </form>
     </div>
   );

@@ -18,11 +18,13 @@ const Navbar = () => {
     const navLinks =<>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/addAssignment'>Create Assignment</NavLink></li>
-        <li><NavLink to='/assignments'>Assignments</NavLink></li>
+        <li><NavLink to='/assignments'>All Assignments</NavLink></li>
+        <li><NavLink to='/submittedAssignments'>Submitted Assignments</NavLink></li>
+        <li><NavLink to='/myAssignments'>My Assignments</NavLink></li>
         
     </>
     return (
-        <div className="navbar bg-base-100 max-w-7xl mx-auto my-5 shadow-lg rounded-md">
+        <div className="navbar bg-base-200 mx-auto my-5 px-4 rounded-md">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -33,7 +35,7 @@ const Navbar = () => {
       </ul>
     </div>
     <div className="flex items-center">
-    <img className="w-28" src="https://i.ibb.co/FwcVqwD/group.png" alt="" />
+    <img className="w-28 h-20" src="https://i.ibb.co/FwcVqwD/group.png" alt="" />
     <a className="btn btn-ghost normal-case text-xl font-extrabold text-green-700">Study Hive</a>
     </div>
   </div>

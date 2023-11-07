@@ -8,6 +8,8 @@ import AddAssignment from "../components/layout/AddAssignment/AddAssignment";
 import UpdateAssignment from "../components/layout/UpdateAssignment/UpdateAssignment";
 import Assignments from "../page/Assignments/Assignments";
 import AssignmentsDetails from "../page/AssignmentsDetails/AssignmentsDetails";
+import MyAssignments from "../page/MyAssignments/MyAssignments";
+import SubmittedAssignments from "../page/SubmittedAssignments/SubmittedAssignments";
 
 const routes = createBrowserRouter([
     {
@@ -45,6 +47,15 @@ const routes = createBrowserRouter([
             path: 'assignmentDetails/:id',
             element: <AssignmentsDetails />,
             loader: ({params})=>fetch(`http://localhost:5000/assignment/${params.id}`)
+        },
+        {
+            path: "/submittedAssignments",
+            element: <SubmittedAssignments />,
+            loader: () => fetch("http://localhost:5000/submittedAssignments")
+        },
+        {
+            path: "/myAssignments",
+            element: <MyAssignments />
         },
       ]
     },
