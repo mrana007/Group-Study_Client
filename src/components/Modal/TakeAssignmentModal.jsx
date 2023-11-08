@@ -5,8 +5,8 @@ import { useLoaderData } from "react-router-dom";
 
 const TakeAssignmentModal = () => {
   const dialogRef = useRef();
-    const services = useLoaderData();
-    const {title, marks, creator} = services;
+    const defaultValue = useLoaderData();
+    const {title, marks, creator} = defaultValue;
 
   const handleSubmitAssignment = (event) => {
     event.preventDefault();
@@ -14,15 +14,16 @@ const TakeAssignmentModal = () => {
     const form = event.target;
     const examineeName = form.examineeName.value;
     const title = form.title.value;
+    const pdf = form.pdf.value;
     const marks = form.marks.value;
     const creator = form.creator.value;
 
     const status ="pending"
 
-    const newSubmittedAssignments = {status, examineeName, title, marks, creator};
+    const newSubmittedAssignments = {status, examineeName, title, pdf, marks, creator};
 
     // send data to the server
-    fetch("http://localhost:5000/submittedAssignments", {
+    fetch("https://a11-group-study-server.vercel.app/submittedAssignments", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -78,7 +79,21 @@ const TakeAssignmentModal = () => {
                 <label className="input-group">
                   <input
                     className="textarea textarea-bordered w-full"
-                    name="title" defaultValue={title} placeholder="Enter a quick title"
+                    name="title" defaultValue={title} placeholder="Enter assignment title"
+                  />
+                </label>
+              </div>
+                    {/* pdf link */}
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">PDF Link</span>
+                </label>
+                <label className="input-group">
+                <input
+                    type="text"
+                    name="pdf"
+                    placeholder="Input pdf link"
+                    className="input input-bordered w-full  py-2"
                   />
                 </label>
               </div>

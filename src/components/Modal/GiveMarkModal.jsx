@@ -1,7 +1,8 @@
 import swal from "sweetalert";
 import { useRef } from "react";
-const GiveMarkModal = ({_id}) => {
+const GiveMarkModal = ({_id, defaults}) => {
   const dialogRef = useRef();
+  const {title, creator, marks, status} = defaults;
 
   const handleGiveMark = (event) => {
     event.preventDefault();
@@ -12,10 +13,10 @@ const GiveMarkModal = ({_id}) => {
     const giveMarks = form.giveMarks.value;
     const feedback = form.feedback.value;
 
-    const newGiveMarks = {pdfLink, note, giveMarks, feedback};
+    const newGiveMarks = {status, title, creator, marks, pdfLink, note, giveMarks, feedback};
     
     // send data to the server
-    fetch("http://localhost:5000/giveMarks", {
+    fetch("https://a11-group-study-server.vercel.app/giveMarks", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -31,7 +32,7 @@ const GiveMarkModal = ({_id}) => {
         }
       });
       
-      fetch(`http://localhost:5000/submittedAssignments/${_id}`,{
+      fetch(`https://a11-group-study-server.vercel.app/submittedAssignments/${_id}`,{
         method:"PUT",
         headers:{
             "content-type": "application/json"
@@ -56,7 +57,7 @@ const GiveMarkModal = ({_id}) => {
         <div className="modal-box">
           <form onSubmit={handleGiveMark}>
             <div className="mb-8 w-full mx-auto">
-                {/* examinee */}
+                {/* pdf */}
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">PDF Link</span>

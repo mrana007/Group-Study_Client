@@ -19,9 +19,11 @@ const Login = () => {
         const password = form.get('password');
         login(email, password)
         .then(result => {
-            console.log(result.user);
+            const user = result.user
+            console.log(user);
             swal("Login successfully", "", "success");
-            navigate(location?.state ? location.state : '/');
+            navigate(location?.state ? location?.state : '/');
+            
 
         })
         .catch(error =>{

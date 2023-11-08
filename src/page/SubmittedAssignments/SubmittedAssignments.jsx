@@ -16,11 +16,11 @@ const SubmittedAssignments = () => {
             <tr className="">
               <th>
                 <label>
-                  1
                 </label>
               </th>
               <th className="font-bold text-xl text-black">Examinee Name</th>
               <th className="font-bold text-xl text-black">Title</th>
+              <th className="font-bold text-xl text-black">PDF Preview</th>
               <th className="font-bold text-xl text-black">Marks</th>
               <th className="font-bold text-xl text-black">Status</th>
               <th className="font-bold text-xl text-black">Obtain Marks</th>

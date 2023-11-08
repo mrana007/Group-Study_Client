@@ -19,8 +19,13 @@ const Navbar = () => {
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/addAssignment'>Create Assignment</NavLink></li>
         <li><NavLink to='/assignments'>All Assignments</NavLink></li>
-        <li><NavLink to='/submittedAssignments'>Submitted Assignments</NavLink></li>
+        {
+          user?.email && (
+            <>
+            <li><NavLink to='/submittedAssignments'>Submitted Assignments</NavLink></li>
         <li><NavLink to='/myAssignments'>My Assignments</NavLink></li>
+            </>
+        )}
         
     </>
     return (

@@ -9,6 +9,7 @@ import {
   signOut,
 } from "firebase/auth";
 import app from "../../config/firebase.config";
+import axios from "axios";
 
 export const AuthContext = createContext(null);
 
@@ -43,10 +44,29 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       // console.log('user in the auth state changed', currentUser);
+      const userEmail = currentUser?.email || user?.email;
+      const loggedUser = {email: userEmail}
       setUser(currentUser);
       console.log('current user', currentUser);
       setLoading(false);
+      // if user exist then issues a token
+      if(currentUser){
+        axios.post('https://a11-group-study-server.vercel.app/jwt',loggedUser, {
+          withCredentials: true})
+        .then(res=>{
+          console.log('token response', res.data);
+        })
+      }
+      else{
+        axios.post('https://a11-group-study-server.vercel.app/logout', loggedUser, {
+          withCredentials: true
+        })
+        .then(res=>{
+          console.log(res.data);
+        })
+      }
     });
+
     return () => {
       unSubscribe();
     };

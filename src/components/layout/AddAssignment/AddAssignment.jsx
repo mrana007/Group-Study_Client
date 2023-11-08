@@ -21,7 +21,7 @@ const AddAssignment = () => {
         console.log(newAssignment);
 
         // send data to the server
-        fetch('http://localhost:5000/assignment', {
+        fetch('https://a11-group-study-server.vercel.app/assignment', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

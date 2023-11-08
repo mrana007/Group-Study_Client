@@ -1,7 +1,8 @@
 import GiveMarkModal from "../../components/Modal/GiveMarkModal";
 
 const submittedAssignmentsTable = ({submittedAssignment}) => {
-    const { _id, examineeName, title, marks, status } = submittedAssignment;
+    const { _id, creator, examineeName, pdf, title, marks, status } = submittedAssignment;
+    const defaults = {title, marks, creator, status};
   
     return (
       <tr>
@@ -9,6 +10,7 @@ const submittedAssignmentsTable = ({submittedAssignment}) => {
         </th>
         <td>{examineeName}</td>
         <td>{title}</td>
+        <td>{pdf}</td>
         <td>{marks}</td>
         <th>
           {
@@ -18,7 +20,7 @@ const submittedAssignmentsTable = ({submittedAssignment}) => {
         </th>
         <th>
             {
-                <GiveMarkModal _id={_id}></GiveMarkModal>
+                <GiveMarkModal _id={_id} defaults={defaults} ></GiveMarkModal>
             }
         </th>
       </tr>

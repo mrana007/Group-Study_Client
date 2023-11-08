@@ -26,7 +26,7 @@ const UpdateAssignment = () => {
         console.log(updatedAssignment);
 
                 // send data to the server
-                fetch(`http://localhost:5000/assignment/${_id}`, {
+                fetch(`https://a11-group-study-server.vercel.app/assignment/${_id}`, {
                     method: 'PUT',
                     headers: {
                         'content-type': 'application/json'

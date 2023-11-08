@@ -10,6 +10,7 @@ import Assignments from "../page/Assignments/Assignments";
 import AssignmentsDetails from "../page/AssignmentsDetails/AssignmentsDetails";
 import MyAssignments from "../page/MyAssignments/MyAssignments";
 import SubmittedAssignments from "../page/SubmittedAssignments/SubmittedAssignments";
+import PrivetRoutes from "./PrivateRoutes";
 
 const routes = createBrowserRouter([
     {
@@ -36,26 +37,26 @@ const routes = createBrowserRouter([
         {
             path: 'assignments',
             element: <Assignments />,
-            loader: () => fetch("http://localhost:5000/assignment"),
+            loader: () => fetch("https://a11-group-study-server.vercel.app/assignment"),
         },
         {
             path: 'updateAssignment/:id',
-            element: <UpdateAssignment />,
-            loader: ({params}) => fetch(`http://localhost:5000/assignment/${params.id}`)
+            element: <PrivetRoutes><UpdateAssignment /></PrivetRoutes>,
+            loader: ({params}) => fetch(`https://a11-group-study-server.vercel.app/assignment/${params.id}`)
         },
         {
             path: 'assignmentDetails/:id',
-            element: <AssignmentsDetails />,
-            loader: ({params})=>fetch(`http://localhost:5000/assignment/${params.id}`)
+            element: <PrivetRoutes><AssignmentsDetails /></PrivetRoutes>,
+            loader: ({params})=>fetch(`https://a11-group-study-server.vercel.app/assignment/${params.id}`)
         },
         {
             path: "/submittedAssignments",
-            element: <SubmittedAssignments />,
-            loader: () => fetch("http://localhost:5000/submittedAssignments")
+            element: <PrivetRoutes><SubmittedAssignments /></PrivetRoutes>,
+            loader: () => fetch("https://a11-group-study-server.vercel.app/submittedAssignments")
         },
         {
             path: "/myAssignments",
-            element: <MyAssignments />
+            element: <PrivetRoutes><MyAssignments /></PrivetRoutes>,
         },
       ]
     },
