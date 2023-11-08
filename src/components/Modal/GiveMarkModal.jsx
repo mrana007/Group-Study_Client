@@ -1,12 +1,7 @@
-
 import swal from "sweetalert";
 import { useRef } from "react";
-// import { useLoaderData } from "react-router-dom";
-
-const GiveMarkModal = () => {
+const GiveMarkModal = ({_id}) => {
   const dialogRef = useRef();
-    // const services = useLoaderData();
-    // const { giveMarks, feedback} = services;
 
   const handleGiveMark = (event) => {
     event.preventDefault();
@@ -17,9 +12,7 @@ const GiveMarkModal = () => {
     const giveMarks = form.giveMarks.value;
     const feedback = form.feedback.value;
 
-    const status ="pending"
-
-    const newGiveMarks = {status, pdfLink, note, giveMarks, feedback};
+    const newGiveMarks = {pdfLink, note, giveMarks, feedback};
     
     // send data to the server
     fetch("http://localhost:5000/giveMarks", {
@@ -36,6 +29,14 @@ const GiveMarkModal = () => {
           swal("", "Marks Given Successfully", "success");
           dialogRef.current.close(); // Close the modal
         }
+      });
+      
+      fetch(`http://localhost:5000/submittedAssignments/${_id}`,{
+        method:"PUT",
+        headers:{
+            "content-type": "application/json"
+        },
+        body: JSON.stringify({status: "confirm"})
       });
   };
 
@@ -91,6 +92,7 @@ const GiveMarkModal = () => {
                 <input
                     type="number"
                     name="giveMarks"
+                    required
                     placeholder="Please give marks"
                     className="input input-bordered w-full  py-2"
                   />
@@ -105,12 +107,12 @@ const GiveMarkModal = () => {
                   <input
                     type="text"
                     name="feedback"
+                    required
                     placeholder="Give feedback"
                     className="input input-bordered w-full  py-2"
                   />
                 </label>
               </div>
-                {/* assignment creator */}
             </div>
             <input
               type="submit"

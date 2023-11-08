@@ -3,7 +3,7 @@ import TakeAssignmentModal from "../../components/Modal/TakeAssignmentModal";
 
 const AssignmentsDetails = () => {
 
-    const {title, category, marks, description, image, date } = useLoaderData();
+    const {title, category, marks, description, image, date, creator } = useLoaderData();
 
   return (
     <div className=" max-w-7xl mx-auto">
@@ -28,9 +28,13 @@ const AssignmentsDetails = () => {
               <p>
                 Marks: <span className="text-lg font-semibold">{marks}</span> 
               </p>
+              <p>
+                Assignments Creator: <span className="text-lg font-semibold">{creator}</span>
+              </p>
               <p className="pb-2">
                 Submission Date: <span className="text-lg font-semibold">{date}</span>
               </p>
+              
             </div>
             <TakeAssignmentModal></TakeAssignmentModal>
           </div>
