@@ -23,7 +23,7 @@ const TakeAssignmentModal = () => {
     const newSubmittedAssignments = {status, examineeName, title, pdf, marks, creator};
 
     // send data to the server
-    fetch("https://a11-group-study-server.vercel.app/submittedAssignments", {
+    fetch("http://localhost:5000/submittedAssignments", {
       method: "POST",
       headers: {
         "content-type": "application/json",

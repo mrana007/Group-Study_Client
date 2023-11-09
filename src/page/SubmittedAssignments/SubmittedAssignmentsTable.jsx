@@ -2,7 +2,7 @@ import GiveMarkModal from "../../components/Modal/GiveMarkModal";
 
 const submittedAssignmentsTable = ({submittedAssignment}) => {
     const { _id, creator, examineeName, pdf, title, marks, status } = submittedAssignment;
-    const defaults = {title, marks, creator, status};
+    const defaults = {examineeName, title, marks, creator, status};
   
     return (
       <tr>

@@ -1,10 +1,13 @@
 import swal from "sweetalert";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { AuthContext } from "../../../providers/AuthProvider/AuthProvider";
 
 const AddAssignment = () => {
-    const [startDate, setStartDate] = useState(new Date());
+    const [startDate, setStartDate] = useState();
+
+    const {user} =useContext(AuthContext)
 
     const handleAddAssignment = event =>{
         event.preventDefault();
@@ -21,7 +24,7 @@ const AddAssignment = () => {
         console.log(newAssignment);
 
         // send data to the server
-        fetch('https://a11-group-study-server.vercel.app/assignment', {
+        fetch('http://localhost:5000/assignment', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -83,11 +86,7 @@ const AddAssignment = () => {
                             <option value="easy">Easy</option>
                             <option value="medium">Medium</option>
                             <option value="hard">Hard</option>
-                            
-                            
                         </select>
-              {/* <input type="text" name="category" required placeholder="Enter category"
-                className="input input-bordered w-full" /> */}
             </label>
           </div>
         </div>
@@ -98,7 +97,7 @@ const AddAssignment = () => {
               <span className="label-text">Assignment Creator</span>
             </label>
             <label className="input-group">
-              <input type="email" name="creator" required placeholder="Enter assignment creator email"
+              <input type="email" name="creator" value={user?.email} required placeholder="Enter assignment creator email"
                 className="input input-bordered w-full" />
             </label>
           </div>

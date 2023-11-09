@@ -1,13 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
-import MyAssignmentsTable from "./MyAssignmentsTable";
+import MyAssignmentsTable from "./CompletedAssignmentsTable";
 
-const MyAssignments = () => {
+const CompletedAssignments = () => {
 
    const {user} = useContext(AuthContext);
    const [myAssignments, setMyAssignments] = useState([]);
 
-    const url = `https://a11-group-study-server.vercel.app/giveMarks?creator=${user?.email}`;
+    const url = "http://localhost:5000/giveMarks";
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -17,7 +17,7 @@ const MyAssignments = () => {
 
     return (
         <div className="max-w-7xl mx-auto">
-            <h2 className="text-5xl text-center my-10">My Assignments: {myAssignments.length}</h2>
+            <h2 className="text-5xl text-center my-10">Completed Assignments: {myAssignments.length}</h2>
             <div className="overflow-x-auto mb-10 bg-green-100">
         <table className="table">
           {/* head */}
@@ -27,14 +27,12 @@ const MyAssignments = () => {
                 <label>
                 </label>
               </th>
-              
+              <th className="font-bold text-xl text-black text-center">Examinee</th>
               <th className="font-bold text-xl text-black text-center">Title</th>
-             
               <th className="font-bold text-xl text-black text-center">Assignments Marks</th>
               <th className="font-bold text-xl text-black text-center">Status</th>
               <th className="font-bold text-xl text-black text-center">Obtain Marks</th>
               <th className="font-bold text-xl text-black text-center">Feedback</th>
-              <th className="font-bold text-xl text-black text-center">Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -48,4 +46,4 @@ const MyAssignments = () => {
     );
 };
 
-export default MyAssignments;
+export default CompletedAssignments;

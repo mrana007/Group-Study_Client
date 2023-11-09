@@ -23,7 +23,7 @@ const Navbar = () => {
           user?.email && (
             <>
             <li><NavLink to='/submittedAssignments'>Submitted Assignments</NavLink></li>
-        <li><NavLink to='/myAssignments'>My Assignments</NavLink></li>
+        <li><NavLink to='/completedAssignments'>Complete Assignments</NavLink></li>
             </>
         )}
         

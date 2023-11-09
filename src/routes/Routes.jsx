@@ -8,9 +8,9 @@ import AddAssignment from "../components/layout/AddAssignment/AddAssignment";
 import UpdateAssignment from "../components/layout/UpdateAssignment/UpdateAssignment";
 import Assignments from "../page/Assignments/Assignments";
 import AssignmentsDetails from "../page/AssignmentsDetails/AssignmentsDetails";
-import MyAssignments from "../page/MyAssignments/MyAssignments";
 import SubmittedAssignments from "../page/SubmittedAssignments/SubmittedAssignments";
 import PrivetRoutes from "./PrivateRoutes";
+import CompletedAssignments from "../page/MyAssignments/CompletedAssignments";
 
 const routes = createBrowserRouter([
     {
@@ -37,26 +37,26 @@ const routes = createBrowserRouter([
         {
             path: 'assignments',
             element: <Assignments />,
-            loader: () => fetch("https://a11-group-study-server.vercel.app/assignment"),
+            loader: () => fetch("http://localhost:5000/assignment"),
         },
         {
             path: 'updateAssignment/:id',
             element: <PrivetRoutes><UpdateAssignment /></PrivetRoutes>,
-            loader: ({params}) => fetch(`https://a11-group-study-server.vercel.app/assignment/${params.id}`)
+            loader: ({params}) => fetch(`http://localhost:5000/assignment/${params.id}`)
         },
         {
             path: 'assignmentDetails/:id',
             element: <PrivetRoutes><AssignmentsDetails /></PrivetRoutes>,
-            loader: ({params})=>fetch(`https://a11-group-study-server.vercel.app/assignment/${params.id}`)
+            loader: ({params})=>fetch(`http://localhost:5000/assignment/${params.id}`)
         },
         {
             path: "/submittedAssignments",
             element: <PrivetRoutes><SubmittedAssignments /></PrivetRoutes>,
-            loader: () => fetch("https://a11-group-study-server.vercel.app/submittedAssignments")
+            loader: () => fetch("http://localhost:5000/submittedAssignments")
         },
         {
-            path: "/myAssignments",
-            element: <PrivetRoutes><MyAssignments /></PrivetRoutes>,
+            path: "/completedAssignments",
+            element: <PrivetRoutes><CompletedAssignments /></PrivetRoutes>,
         },
       ]
     },
