@@ -16,7 +16,7 @@ const GiveMarkModal = ({_id, defaults}) => {
     const newGiveMarks = {examineeName, status:"Confirmed", title, creator, marks, pdfLink, note, giveMarks, feedback};
     
     // send data to the server
-    fetch("http://localhost:5000/giveMarks", {
+    fetch("https://a11-group-study-server.vercel.app/giveMarks", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -32,7 +32,7 @@ const GiveMarkModal = ({_id, defaults}) => {
         }
       });
       
-      fetch(`http://localhost:5000/submittedAssignments/${_id}`,{
+      fetch(`https://a11-group-study-server.vercel.app/submittedAssignments/${_id}`,{
         method:"PUT",
         headers:{
             "content-type": "application/json"

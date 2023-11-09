@@ -7,7 +7,7 @@ const CompletedAssignments = () => {
 //    const {user} = useContext(AuthContext);
 //    const [myAssignments, setMyAssignments] = useState([]);
 
-//     const url = "http://localhost:5000/giveMarks";
+//     const url = "https://a11-group-study-server.vercel.app/giveMarks";
 //     useEffect(() => {
 //         fetch(url)
 //             .then(res => res.json())
