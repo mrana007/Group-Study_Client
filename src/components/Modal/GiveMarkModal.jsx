@@ -2,7 +2,7 @@ import swal from "sweetalert";
 import { useRef } from "react";
 const GiveMarkModal = ({_id, defaults}) => {
   const dialogRef = useRef();
-  const {examineeName, title, creator, marks} = defaults;
+  const {examineeName, title, creator, marks, pdf} = defaults;
 
   const handleGiveMark = (event) => {
     event.preventDefault();
@@ -66,7 +66,8 @@ const GiveMarkModal = ({_id, defaults}) => {
                   <input
                     type="text"
                     name="pdfLink"
-                    placeholder=""
+                    defaultValue={pdf}
+                    readOnly
                     className="input input-bordered w-full  py-2"
                   />
                 </label>

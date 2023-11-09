@@ -1,7 +1,5 @@
 
-
-
-const MyAssignmentsTable = ({myAssignment, }) => {
+const CompletedAssignmentsTable = ({myAssignment, }) => {
 
     const {examineeName, title, marks, status, giveMarks, feedback  } = myAssignment;
 
@@ -22,5 +20,4 @@ const MyAssignmentsTable = ({myAssignment, }) => {
     );
   };
   
-  export default MyAssignmentsTable;
-
+  export default CompletedAssignmentsTable;

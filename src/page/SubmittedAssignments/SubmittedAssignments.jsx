@@ -18,12 +18,12 @@ const SubmittedAssignments = () => {
               <th>
                 <label></label>
               </th>
-              <th className="font-bold text-xl text-black">Examinee Name</th>
-              <th className="font-bold text-xl text-black">Title</th>
-              <th className="font-bold text-xl text-black">PDF Preview</th>
-              <th className="font-bold text-xl text-black">Marks</th>
-              <th className="font-bold text-xl text-black">Status</th>
-              <th className="font-bold text-xl text-black">Obtain Marks</th>
+              <th className="font-bold text-xl text-black text-center">Examinee Name</th>
+              <th className="font-bold text-xl text-black text-center">Title</th>
+              <th className="font-bold text-xl text-black text-center">PDF Preview</th>
+              <th className="font-bold text-xl text-black text-center">Marks</th>
+              <th className="font-bold text-xl text-black text-center">Status</th>
+              <th className="font-bold text-xl text-black text-center">Obtain Marks</th>
             </tr>
           </thead>
           <tbody>

@@ -10,7 +10,9 @@ import Assignments from "../page/Assignments/Assignments";
 import AssignmentsDetails from "../page/AssignmentsDetails/AssignmentsDetails";
 import SubmittedAssignments from "../page/SubmittedAssignments/SubmittedAssignments";
 import PrivetRoutes from "./PrivateRoutes";
-import CompletedAssignments from "../page/MyAssignments/CompletedAssignments";
+import CompletedAssignments from "../page/CompletedAssignments/CompletedAssignments";
+import MySubmittedAssignments from "../page/SubmittedAssignments/MySubmittedAssignments";
+import MyCompletedAssignment from "../page/CompletedAssignments/MyCompletedAssignment";
 
 const routes = createBrowserRouter([
     {
@@ -55,8 +57,16 @@ const routes = createBrowserRouter([
             loader: () => fetch("http://localhost:5000/submittedAssignments")
         },
         {
+            path: "/mySubmittedAssignments",
+            element: <MySubmittedAssignments />
+        },
+        {
             path: "/completedAssignments",
             element: <PrivetRoutes><CompletedAssignments /></PrivetRoutes>,
+        },
+        {
+            path: "/myCompletedAssignments",
+            element: <MyCompletedAssignment />,
         },
       ]
     },

@@ -1,24 +1,24 @@
 import GiveMarkModal from "../../components/Modal/GiveMarkModal";
 
-const submittedAssignmentsTable = ({submittedAssignment}) => {
+const SubmittedAssignmentsTable = ({submittedAssignment}) => {
     const { _id, creator, examineeName, pdf, title, marks, status } = submittedAssignment;
-    const defaults = {examineeName, title, marks, creator, status};
+    const defaults = {pdf, examineeName, title, marks, creator, status};
   
     return (
       <tr>
         <th>
         </th>
-        <td>{examineeName}</td>
-        <td>{title}</td>
-        <td>{pdf}</td>
-        <td>{marks}</td>
+        <td className="text-center">{examineeName}</td>
+        <td className="text-center">{title}</td>
+        <td className="text-center">{pdf}</td>
+        <td className="text-center">{marks}</td>
         <th>
           {
               status === 'pending' ? <span className="font-bold text-orange-600 text-lg">Pending</span> :
-              <span className=" font-bold text-green-900 text-lg">Confirmed</span>
+              <span className=" font-bold text-green-900 text-lg text-center">Confirmed</span>
           }
         </th>
-        <th>
+        <th className="text-center">
             {
                 <GiveMarkModal _id={_id} defaults={defaults} ></GiveMarkModal>
             }
@@ -27,5 +27,5 @@ const submittedAssignmentsTable = ({submittedAssignment}) => {
     );
   };
   
-  export default submittedAssignmentsTable;
+  export default SubmittedAssignmentsTable;
 

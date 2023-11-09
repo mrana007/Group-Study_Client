@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
-import MyAssignmentsTable from "./CompletedAssignmentsTable";
+import CompletedAssignmentsTable from "./CompletedAssignmentsTable";
 
 const CompletedAssignments = () => {
 
@@ -37,7 +37,7 @@ const CompletedAssignments = () => {
           </thead>
           <tbody>
             {
-                myAssignments?.map(myAssignment=> <MyAssignmentsTable key={myAssignment._id} myAssignment={myAssignment}></MyAssignmentsTable>)
+                myAssignments?.map(myAssignment=> <CompletedAssignmentsTable key={myAssignment._id} myAssignment={myAssignment}></CompletedAssignmentsTable>)
             }
           </tbody>
         </table>
